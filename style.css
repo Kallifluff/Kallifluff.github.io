@@ -17,7 +17,7 @@ main {
 header {
   background: rgba(0,0,0,0.3);
   backdrop-filter: blur(10px);
-  padding: 30px 0;
+  padding: 25px 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -25,19 +25,19 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.5em;
-  animation: fadeInDown 1s ease-out;
+  font-size: 2.2em;
+  font-weight: bold;
 }
 
 header p {
-  margin: 5px 0 15px;
-  font-size: 18px;
-  animation: fadeIn 2s ease-out;
+  margin: 5px 0 0;
+  font-size: 16px;
+  opacity: 0.9;
 }
 
 /* ===== Navigation ===== */
 nav {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 nav a {
@@ -47,7 +47,7 @@ nav a {
   font-weight: bold;
   font-size: 18px;
   position: relative;
-  transition: 0.3s;
+  transition: transform 0.2s ease-in-out;
 }
 
 nav a::after {
@@ -56,7 +56,7 @@ nav a::after {
   width: 0;
   height: 3px;
   background: #ffd700;
-  transition: width 0.3s;
+  transition: width 0.2s ease-in-out;
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -68,19 +68,17 @@ nav a:hover::after {
 
 nav a:hover {
   color: #ffd700;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* ===== Hero Section ===== */
+/* ===== Hero Section (Home) ===== */
 .hero {
   padding: 120px 20px;
-  animation: fadeIn 2s ease-in-out;
 }
 
 .hero h2 {
   font-size: 2em;
   margin-bottom: 20px;
-  color: #fff;
 }
 
 .hero p {
@@ -107,30 +105,29 @@ button:hover {
   color: #6a11cb;
 }
 
-/* ===== Projects Section ===== */
+/* ===== Projects Section (Cards) ===== */
 .projects-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   margin-top: 50px;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
   border-radius: 20px;
   box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
-  padding: 30px;
-  width: 300px;
-  transition: transform 0.4s, box-shadow 0.4s, background 0.3s;
-  animation: fadeInUp 1s ease-out;
+  padding: 40px;
+  width: 350px;
+  transition: transform 0.35s, box-shadow 0.35s, background 0.25s;
   cursor: pointer;
 }
 
 .project-card h2 {
   color: #ffd700;
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin-top: 0;
 }
 
@@ -145,14 +142,34 @@ button:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* ===== About & Contact Sections (Simple) ===== */
+.about, .contact {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: left;
+}
+
+.about h2, .contact h2 {
+  font-size: 2em;
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.about p, .contact p {
+  font-size: 1.1em;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
 /* ===== Animations ===== */
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-50px); }
+  from { opacity: 0; transform: translateY(-40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(50px); }
+  from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -161,7 +178,7 @@ button:hover {
   to { opacity: 1; }
 }
 
-/* ===== Contact Section ===== */
+/* ===== Links ===== */
 a {
   color: #ffd700;
   text-decoration: none;
@@ -170,5 +187,4 @@ a {
 
 a:hover {
   color: #fff;
-  text-decoration: underline;
 }
