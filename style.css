@@ -7,50 +7,45 @@
 
 /* ===== Reset-ish ===== */
 * { box-sizing: border-box; }
-html,body { height: 100%; }
+html, body { height: 100%; margin: 0; padding: 0; }
 
 /* ===== Global ===== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, var(--primary-1), var(--primary-2));
   color: #fff;
   text-align: center;
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  background: linear-gradient(135deg, var(--primary-1), var(--primary-2));
+  padding-bottom: 80px; /* footer space */
 }
 
-main { padding: 80px 20px 120px; }
+main { padding: 80px 20px 20px; }
 
-/* ===== Header (same on every page) ===== */
+/* ===== Header ===== */
 header{
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 22px 20px;  /* taller than before */
-  background: rgba(0,0,0,0.18);
-  backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 40px 20px; /* taller */
+  background: linear-gradient(135deg, var(--primary-1), var(--primary-2));
 }
 
-header h1{
+header h1 {
   margin: 0;
-  font-size: 2.3rem;   /* bigger name */
-  font-weight: 800;
-  letter-spacing: 0.5px;
+  font-size: 3rem;   /* bigger letters */
+  font-weight: 700;  /* normal bold */
 }
 
-header p{
+header p {
   margin: 6px 0 10px;
-  font-size: 1rem;
+  font-size: 1.2rem; /* bigger subtitle */
   opacity: 0.95;
 }
 
 /* ===== Navigation ===== */
-nav{
+nav {
   margin-top: 6px;
 }
 
@@ -60,12 +55,12 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px; /* bigger links */
   position: relative;
   transition: transform 120ms ease;
 }
 
-nav a::after{
+nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -76,15 +71,16 @@ nav a::after{
   transition: width 120ms ease;
 }
 
-nav a:hover{
+nav a:hover {
   color: var(--accent);
   transform: scale(1.03);
 }
 
-nav a:hover::after{
+nav a:hover::after {
   width: 100%;
 }
 
+/* Remove underline on regular links */
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: #fff; text-decoration: none; }
 
@@ -95,12 +91,12 @@ a:hover { color: #fff; text-decoration: none; }
   margin: 0 auto;
 }
 
-.hero h2{
+.hero h2 {
   font-size: 2.1rem;
   margin: 0 0 14px;
 }
 
-.hero p{
+.hero p {
   font-size: 1.05rem;
   margin: 0 0 24px;
   color: rgba(255,255,255,0.95);
@@ -117,13 +113,13 @@ button.cta {
   transition: transform 160ms ease, background 160ms ease;
 }
 
-button.cta:hover{
+button.cta:hover {
   transform: scale(1.06);
   background: #fff;
 }
 
 /* ===== Projects ===== */
-.projects-container{
+.projects-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -131,7 +127,7 @@ button.cta:hover{
   margin-top: 20px;
 }
 
-.project-card{
+.project-card {
   width: 460px;
   min-height: 200px;
   background: var(--glass-bg);
@@ -143,19 +139,19 @@ button.cta:hover{
   text-align: left;
 }
 
-.project-card h2{
+.project-card h2 {
   margin: 0 0 10px;
   color: var(--accent);
   font-size: 1.45rem;
 }
 
-.project-card p{
+.project-card p {
   margin: 0;
   color: rgba(255,255,255,0.92);
   line-height: 1.55;
 }
 
-.project-card:hover{
+.project-card:hover {
   transform: translateY(-18px) rotateX(2deg);
   box-shadow: 0 20px 45px rgba(0,0,0,0.55);
   background: rgba(255,255,255,0.14);
@@ -169,7 +165,7 @@ button.cta:hover{
   text-align: left;
 }
 
-.about h2, .contact h2{
+.about h2, .contact h2 {
   font-size: 1.9rem;
   color: var(--accent);
   margin-bottom: 12px;
@@ -181,26 +177,30 @@ button.cta:hover{
   line-height: 1.6;
 }
 
-/* ===== Footer (new) ===== */
-footer{
-  background: rgba(0,0,0,0.18);
-  backdrop-filter: blur(8px);
-  padding: 22px 20px;   /* same height as header */
-  text-align: center;
+/* ===== Footer Gradient ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* same as header padding */
+  background: linear-gradient(135deg, var(--primary-1), var(--primary-2));
+  z-index: 99;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 980px){
   .project-card { width: 90%; }
-  header h1 { font-size: 2rem; }
-  header p { font-size: 0.9rem; }
-  nav a { margin: 0 12px; font-size: 15px; }
+  header h1 { font-size: 2.5rem; }
+  header p { font-size: 1rem; }
+  nav a { font-size: 16px; margin: 0 12px; }
   main { padding-top: 70px; }
 }
 
 @media (max-width: 520px){
-  header { padding: 12px 12px; }
+  header { padding: 30px 12px; }
   .hero { padding-top: 80px; }
-  header h1 { font-size: 1.6rem; }
+  header h1 { font-size: 2rem; }
+  header p { font-size: 0.95rem; }
   .about, .contact { padding: 24px 14px; text-align: left; }
 }
