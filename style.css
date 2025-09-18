@@ -29,7 +29,7 @@ header{
   align-items: center;
   justify-content: center;
   padding: 40px 20px; /* taller */
-  background: #4D20C9;
+  background: #2E0384;
 }
 
 header h1 {
@@ -121,22 +121,26 @@ button.cta:hover {
 /* ===== Projects ===== */
 .projects-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 36px;
-  margin-top: 20px;
+  padding: 20px;
+  overflow-x: auto; /* allow horizontal scroll */
+  scroll-behavior: smooth;
+  cursor: grab; /* shows grabbing hand */
+}
+
+.projects-container:active {
+  cursor: grabbing;
 }
 
 .project-card {
-  width: 460px;
+  flex: 0 0 460px; /* keep cards same width */
   min-height: 200px;
-  background: var(--glass-bg);
+  background: rgba(255,255,255,0.10);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 32px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.45);
   transition: transform 320ms cubic-bezier(.2,.9,.3,1), box-shadow 320ms, background 220ms;
-  text-align: left;
 }
 
 .project-card h2 {
@@ -184,7 +188,7 @@ footer {
   left: 0;
   width: 100%;
   height: 80px; /* same as header padding */
-  background: #4D20C9;
+  background: #2E0384;
   z-index: 99;
 }
 

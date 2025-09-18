@@ -24,21 +24,74 @@
   <div class="projects-container">
     <div class="project-card">
       <h2>Password Cracker</h2>
-      <p>Developed scripts to test password strength using custom wordlists and hashing algorithms.</p>
+      <p>Placeholder : )</p>
     </div>
 
     <div class="project-card">
       <h2>Network Analyzer</h2>
-      <p>Built a tool to scan and analyze network traffic, capturing packets and visualizing results.</p>
+      <p>Placeholder : )</p>
     </div>
 
     <div class="project-card">
       <h2>Linux Forensics</h2>
-      <p>Performed forensic analysis on Linux systems in lab projects, recovering deleted files and analyzing logs.</p>
+      <p>Placeholder : )</p>
+    </div>
+
+    <div class="project-card">
+      <h2>Linux Forensics</h2>
+      <p>Placeholder : )</p>
+    </div>
+
+    <div class="project-card">
+      <h2>Linux Forensics</h2>
+      <p>Placeholder : )</p>
+    </div>
+
+    <div class="project-card">
+      <h2>Linux Forensics</h2>
+      <p>Placeholder : )</p>
+    </div>
+
+    <div class="project-card">
+      <h2>Linux Forensics</h2>
+      <p>Placeholder : )</p>
     </div>
   </div>
 </main>
 
 <footer></footer>
+
+<script>
+  const slider = document.querySelector('.projects-container');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+  });
+</script>
+
 </body>
 </html>
