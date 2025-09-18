@@ -121,26 +121,22 @@ button.cta:hover {
 /* ===== Projects ===== */
 .projects-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 36px;
-  padding: 20px;
-  overflow-x: auto; /* allow horizontal scroll */
-  scroll-behavior: smooth;
-  cursor: grab; /* shows grabbing hand */
-}
-
-.projects-container:active {
-  cursor: grabbing;
+  margin-top: 20px;
 }
 
 .project-card {
-  flex: 0 0 460px; /* keep cards same width */
+  width: 460px;
   min-height: 200px;
-  background: rgba(255,255,255,0.10);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 32px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.45);
   transition: transform 320ms cubic-bezier(.2,.9,.3,1), box-shadow 320ms, background 220ms;
+  text-align: left;
 }
 
 .project-card h2 {
