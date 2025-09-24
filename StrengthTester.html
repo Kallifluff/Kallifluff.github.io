@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Password Strength + Breach Check</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="card">
+  <h2>Password Strength + Breach Check</h2>
+  <label for="pwd">Enter password</label>
+  <input id="pwd" type="password" autocomplete="new-password" placeholder="Type a password to test" />
+
+  <div id="strength-bar"><div id="strength-fill"></div></div>
+  <div id="feedback" class="muted">Strength: —</div>
+
+  <div class="row">
+    <div id="pwned-status" class="pill muted">Breach status: unknown</div>
+    <div id="pwned-count" class="muted"></div>
+  </div>
+
+  <small class="note">
+    This tool uses the Have I Been Pwned range API with k-anonymity.
+    Your password is hashed in the browser, and only a hash prefix is sent —
+    your plaintext password is never transmitted.
+  </small>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
