@@ -128,7 +128,7 @@ button.cta:hover {
 }
 
 .project-card {
-  width: 300px;
+  width: 370px;
   min-height: 350px;
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
@@ -279,7 +279,7 @@ small.note {
   header h1 { font-size: 2.5rem; }
   header p { font-size: 1rem; }
   nav a { font-size: 16px; margin: 0 12px; }
-  main { padding-top: 70px; }
+  main { padding-top: 55px; }
 }
 
 @media (max-width: 520px){
