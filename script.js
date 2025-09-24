@@ -143,3 +143,10 @@ input.addEventListener('input', (e) => {
   updateStrengthUI(score, suggestions);
   debounceFullCheck(pwd);
 });
+
+// Show/Hide password checkbox
+const showPwd = document.getElementById('showPwd');
+showPwd.addEventListener('change', () => {
+  input.type = showPwd.checked ? 'text' : 'password';
+});
+

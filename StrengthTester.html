@@ -9,22 +9,27 @@
 <body>
 
 <div class="card">
-  <h2>Password Strength + Breach Check</h2>
-  <label for="pwd">Enter password</label>
-  <input id="pwd" type="password" autocomplete="new-password" placeholder="Type a password to test" />
-
-  <div id="strength-bar"><div id="strength-fill"></div></div>
-  <div id="feedback" class="muted">Strength: —</div>
+  <label for="pwd">Enter a password:</label>
+  <input type="password" id="pwd" />
 
   <div class="row">
-    <div id="pwned-status" class="pill muted">Breach status: unknown</div>
-    <div id="pwned-count" class="muted"></div>
+    <input type="checkbox" id="showPwd" />
+    <label for="showPwd">Show password</label>
   </div>
+
+  <div id="strength-bar"><div id="strength-fill"></div></div>
+  <div id="feedback"></div>
+
+  <div class="row">
+    <span id="pwned-status" class="pill muted">Breach status: unknown</span>
+  </div>
+  <div id="pwned-count" class="muted"></div>
+</div>
 
   <small class="note">
     This tool uses the Have I Been Pwned range API with k-anonymity.
-    Your password is hashed in the browser, and only a hash prefix is sent —
-    your plaintext password is never transmitted.
+    Your password is hashed in the browser, and only a hash prefix is sent.
+    Your plaintext password is never transmitted.
   </small>
 </div>
 

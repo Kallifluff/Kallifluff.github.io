@@ -128,8 +128,8 @@ button.cta:hover {
 }
 
 .project-card {
-  width: 460px;
-  min-height: 200px;
+  width: 300px;
+  min-height: 350px;
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -206,13 +206,17 @@ label {
   margin-bottom: 8px;
 }
 
-input[type="password"] {
+input[type="password"],
+input[type="text"] {
   width: 100%;
   padding: 10px 12px;
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ddd;
+  box-sizing: border-box;
+  line-height: 1.5;
 }
+
 
 #strength-bar {
   height: 12px;
@@ -259,9 +263,15 @@ input[type="password"] {
 small.note {
   display: block;
   margin-top: 10px;
-  color: #666;
+  color: #000;
   font-size: 12px;
 }
+
+.row input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 
 /* ===== Responsive ===== */
 @media (max-width: 980px){
